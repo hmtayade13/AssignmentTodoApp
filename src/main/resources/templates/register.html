@@ -1,0 +1,85 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en"-->
+<!--      xmlns="http://www.w3.org/1999/xhtml"-->
+<!--      xmlns:th="http://www.thymeleaf.org"-->
+<!--      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"-->
+<!--      layout:decorate="default">-->
+<!--    <head>-->
+<!--        <title>Signup</title>-->
+<!--    </head>-->
+<!--    <body>-->
+<!--        <div layout:fragment="content">-->
+<!--            <form class="form-signin" th:action="@{/signup}" method="post">-->
+<!--                <h1 class="h3 mb-3 font-weight-normal">Signup Here</h1>-->
+<!--                <div th:if="${param.error}">-->
+<!--                    Invalid email and password.-->
+<!--                </div>-->
+<!--                <div th:if="${param.logout}">-->
+<!--                    You have been logged out.-->
+<!--                </div>-->
+<!--                <label for="inputUsername" class="sr-only">Username</label>-->
+<!--                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Username" required />-->
+<!--                <label for="inputPassword" class="sr-only">Password</label>-->
+<!--                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required />-->
+<!--                <label for="inputFullname" class="sr-only">Full Name</label>-->
+<!--                <input type="text" name="fullname" id="inputEmail" class="form-control" placeholder="Fullname" required />-->
+<!--                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>-->
+<!--            </form>-->
+<!--            <form class="form-signin" th:action="@{/login}" method="get">-->
+<!--                <button class="btn btn-md btn-success btn-block" type="Submit">Sign In</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </body>-->
+<!--</html>-->
+
+
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="default">
+<head>
+    <title>Login</title>
+</head>
+<body class="text-center">
+<div layout:fragment="content">
+
+    <div class="sidenav">
+        <div class="login-main-text">
+            <h2>New User Registration</h2>
+            <p>Please fill in the details</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="col-md-6 col-sm-12">
+            <div class="login-form">
+                <form th:action="@{/register}" method="post">
+                    <div class="form-group">
+                        <label for="inputUsername">Email Address</label>
+                        <input name="email" id="inputEmail" type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword">Password</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control"
+                               placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputFullname">Full Name</label>
+                        <input name="fullname" id="inputEmail" type="text" class="form-control" placeholder="Full Name">
+                    </div>
+
+                    <button type="submit" class="btn btn-black">Sign Up</button>
+
+
+                </form>
+                <br>
+                <form th:action="@{/login}" method="get">
+                    <button type="submit" class="btn btn-secondary">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
